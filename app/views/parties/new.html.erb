@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+    <% @party.ten_letters_list.chars.each do |l| %>
+        <div class="letter-card"> <h2> <%= l %> </h2></div>
+    <% end %>
+</div>
+
+
+<%= simple_form_for @party do |p| %>
+    <%= p.input :ten_letters_list, :as => :hidden, :input_html => { :value => @party.ten_letters_list } %>
+    <%= p.input :word %>
+    <%= p.button :submit %>
+<% end %>

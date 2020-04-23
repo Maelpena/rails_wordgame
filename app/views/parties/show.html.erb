@@ -1,0 +1,12 @@
+<div class="card p-3 mt-3 bdr-16">
+  <h3 class="font-bold color-blue">Les 10 meilleures réponses</h3>
+<p> nombre de Game : <%= current_user.games.count %> </p>
+<p> meilleur score : <%= current_user.best_score %> </p>
+<p> score : <%= @game.score %> </p>
+<p> nombre de parties : <%= @game.parties.count %> </p>
+  <div class="d-flex justify-content-around">
+        <% @best_results.each do |br| %>
+        <div class="font-bold p-1"><%= br %>    </div>
+        <% end %>
+  </div>
+</div>

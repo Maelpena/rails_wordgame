@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Word.destroy_all
+
+data = File.readlines("/home/mael/Documents/liste_francais.txt")
+i= 0
+data.each do |w|
+    i += 1
+    a = w.split(//)
+    a.pop
+    a.pop  
+    Word.create(word: a.join.upcase)
+
+end
