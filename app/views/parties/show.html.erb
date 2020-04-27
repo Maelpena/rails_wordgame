@@ -1,12 +1,55 @@
-<div class="card p-3 mt-3 bdr-16">
-  <h3 class="font-bold color-blue">Les 10 meilleures réponses</h3>
-<p> nombre de Game : <%= current_user.games.count %> </p>
-<p> meilleur score : <%= current_user.best_score %> </p>
-<p> score : <%= @game.score %> </p>
-<p> nombre de parties : <%= @game.parties.count %> </p>
-  <div class="d-flex justify-content-around">
-        <% @best_results.each do |br| %>
-        <div class="font-bold p-1"><%= br %>    </div>
-        <% end %>
-  </div>
+
+
+
+
+
+
+    
+    <div class="container py-5 text-center">
+      <div class="d-flex justify-content-between color-white font-bold">
+        <div>
+          <p> Nombre de Games : <%= current_user.games.count %> </p>
+          <p> nombre de parties : <%= @game.parties.count %> </p>
+        </div>
+
+         <div class="text-right">
+          <p> meilleur score : <%= current_user.best_score %> </p>
+          <p> score : <%= @game.parties.map {|w| w.word.length }.sum %> </p>
+        </div>
+     
+      </div>
+
+
+      <div class="d-flex justify-content-center">
+          <% @party.ten_letters_list.chars.each do |l| %>
+              <div class="letter-card"> <h2> <%= l %> </h2></div>
+          <% end %>
+      </div>
+       <h2 class="mt-5"> <%= @party.word.upcase %> </h2>
+
+
+
+      <div class="card p-3 mt-3 bdr-16">
+        <h2 class="font-bold color-blue">Les 10 meilleures réponses</h2>
+        <div class="d-flex justify-content-around">
+              <% @best_results.each do |br| %>
+              <div class="font-bold p-1"><%= br %>    </div>
+              <% end %>
+        </div>
+      </div>
+
+      <div class="pt-3">
+        <a class="btn" href="new">Rejouer</a>
+      </div>
+
+      
+
+
+
+      
+
+       
+
+
 </div>
+  

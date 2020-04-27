@@ -1,8 +1,10 @@
-<div class="d-flex justify-content-center">
-    <% @party.ten_letters_list.chars.each do |l| %>
-        <div class="letter-card"> <h2> <%= l %> </h2></div>
-    <% end %>
-</div>
+<div class="container py-5 text-center">
+
+    <div class="d-flex justify-content-center">
+        <% @party.ten_letters_list.chars.each do |l| %>
+            <div class="letter-card"> <h2> <%= l %> </h2></div>
+        <% end %>
+    </div>
 
 
 <%= simple_form_for @party do |p| %>
@@ -10,3 +12,5 @@
     <%= p.input :word %>
     <%= p.button :submit %>
 <% end %>
+
+</div>

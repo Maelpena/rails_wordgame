@@ -12,7 +12,7 @@ data = File.readlines("/home/mael/Documents/liste_francais.txt")
 i= 0
 data.each do |w|
     i += 1
-    a = w.split(//)
+    a = w.chars
     a.pop
     a.pop  
     Word.create(word: a.join.upcase)
