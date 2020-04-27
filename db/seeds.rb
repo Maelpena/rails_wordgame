@@ -8,7 +8,7 @@
 
 Word.destroy_all
 
-data = File.readlines("/home/mael/Documents/liste_francais.txt")
+data = File.readlines("./liste_francais.txt")
 i= 0
 data.each do |w|
     i += 1
