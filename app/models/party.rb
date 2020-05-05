@@ -20,10 +20,7 @@ class Party < ApplicationRecord
                 return false
             end   
         end
-        if !Word.where(word: self.word.upcase).exists?
-            return false
-        end
-        return true
+        Word.where(word: self.word.upcase).exists?
     end
 
     def best_solution

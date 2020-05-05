@@ -10,23 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_170315) do
+ActiveRecord::Schema.define(version: 2020_05_04_125003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.integer "score"
-    t.integer "party_index"
     t.bigint "user_id"
-    t.boolean "is_finished"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "parties", force: :cascade do |t|
     t.string "ten_letters_list"
     t.string "word"
-    t.boolean "available"
     t.bigint "game_id"
     t.index ["game_id"], name: "index_parties_on_game_id"
   end
@@ -40,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_04_24_170315) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "best_score"
-    t.integer "nb_game"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
