@@ -1,0 +1,6 @@
+<% 1.upto(5) do |i| %>
+party_<%= i %>:
+  ten_letters_list: "OUIEAJKLRP"
+  word: "OU"
+  game_id: nil
+<% end %>

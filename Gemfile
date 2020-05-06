@@ -27,4 +27,11 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 4.0.0'
+
+  gem 'capybara'
+  gem 'webdrivers', '~> 4.0'
+  gem 'launchy'
+  gem 'rails-controller-testing'
+  
 end
